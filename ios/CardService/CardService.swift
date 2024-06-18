@@ -40,7 +40,7 @@ class CardService: NSObject {
         return
     };
 
-    let cardCryptogramPacket = Card.makeCardCryptogramPacket(with: cardNumber, expDate: expDate, cvv: cvv, merchantPublicID: merchantId);
+    let cardCryptogramPacket = Card.makeCardCryptogramPacket(cardNumber, expDate: expDate, cvv: cvv, merchantPublicID: merchantId);
 
     resolve(cardCryptogramPacket)
   }
@@ -68,9 +68,6 @@ class CardService: NSObject {
       if let error = error {
         reject("Error", error.message, nil);
       } else {
-        bankInfo["bankName"] = info?.bankName;
-        bankInfo["logoUrl"] = info?.logoUrl;
-
         resolve(bankInfo);
       }
     }

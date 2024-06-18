@@ -10,8 +10,6 @@ class CloudpaymentsPackage : ReactPackage {
     return listOf(
       CardService(reactContext),
       ThreeDSecure(reactContext),
-      CloudPaymentsApi(reactContext),
-      PaymentForm(reactContext),
       GooglePayModule(reactContext),
     )
   }
